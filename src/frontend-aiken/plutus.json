@@ -1,0 +1,186 @@
+{
+  "preamble": {
+    "title": "aiken-lang/multi-sig-wallet",
+    "description": "Aiken contracts for project 'aiken-lang/multi-sig-wallet'",
+    "version": "0.0.0",
+    "plutusVersion": "v3",
+    "compiler": {
+      "name": "Aiken",
+      "version": "v1.1.21+42babe5"
+    },
+    "license": "Apache-2.0"
+  },
+  "validators": [
+    {
+      "title": "hello_world.hello_world.spend",
+      "datum": {
+        "title": "datum",
+        "schema": {
+          "$ref": "#/definitions/hello_world~1Datum"
+        }
+      },
+      "redeemer": {
+        "title": "redeemer",
+        "schema": {
+          "$ref": "#/definitions/hello_world~1Redeemer"
+        }
+      },
+      "compiledCode": "59010701010029800aba2aba1aab9faab9eaab9dab9a48888896600264646644b30013370e900118031baa00189919912cc004cdc3a400060126ea801626464b3001300f0028acc004cdc3a400060166ea800e2b30013371e6eb8c038c030dd5003a450d48656c6c6f2c20576f726c642100899199119801001000912cc00400629422b30013371e6eb8c04400400e2946266004004602400280690101bac300f30103010301030103010301030103010300d3754601e0146eb8c038c030dd5180718061baa0038a5040291640291640346eb8c034004c028dd5002c5900818050009805180580098039baa0018a504014600e002600e6010002600e00260066ea801e29344d95900101",
+      "hash": "d36d6f01490e361d6944b224feecd3875751a05eebae444a30d4125c"
+    },
+    {
+      "title": "hello_world.hello_world.else",
+      "redeemer": {
+        "schema": {}
+      },
+      "compiledCode": "59010701010029800aba2aba1aab9faab9eaab9dab9a48888896600264646644b30013370e900118031baa00189919912cc004cdc3a400060126ea801626464b3001300f0028acc004cdc3a400060166ea800e2b30013371e6eb8c038c030dd5003a450d48656c6c6f2c20576f726c642100899199119801001000912cc00400629422b30013371e6eb8c04400400e2946266004004602400280690101bac300f30103010301030103010301030103010300d3754601e0146eb8c038c030dd5180718061baa0038a5040291640291640346eb8c034004c028dd5002c5900818050009805180580098039baa0018a504014600e002600e6010002600e00260066ea801e29344d95900101",
+      "hash": "d36d6f01490e361d6944b224feecd3875751a05eebae444a30d4125c"
+    },
+    {
+      "title": "multi_sig_fixed.multisig_fixed.spend",
+      "datum": {
+        "title": "_datum",
+        "schema": {
+          "$ref": "#/definitions/Data"
+        }
+      },
+      "redeemer": {
+        "title": "_redeemer",
+        "schema": {
+          "$ref": "#/definitions/multi_sig_fixed~1Redeemer"
+        }
+      },
+      "compiledCode": "59017201010029800aba2aba1aba0aab9faab9eaab9dab9a488888896600264653001300800198041804800cc0200092225980099b8748008c01cdd500144c8cc896600266e1d2000300a375400d15980098059baa006899b8948010c8cc004004c8cc0040052f5c211e581cf06e37f07bdd03ee357d66a4431ab5a36138013094d4c336a51e5eeb00811e581c29f661e46b0f0b708d2509319997a848ac083bff56a0cb0f39c94e5c00811e581c3aa33a370ea3f66fbf1375d40e3f62e9e6ee06077abc83e360deb2e000112cc004006297ae0899912cc004c8cc004004dd6180a180a980a980a980a980a980a980a980a98089baa00a2259800800c528456600266e3cdd7180a8008024528c4cc008008c05800501020268998091ba900233004004001899802002000a01c375c6022002602400280788966002003148002266e012002330020023011001403916403116402460180026018601a00260106ea800a2c8030601000260066ea802229344d9590011",
+      "hash": "caf274c0add6476526990a2417f4422aeef99ff1f04adc3a5fae62eb"
+    },
+    {
+      "title": "multi_sig_fixed.multisig_fixed.else",
+      "redeemer": {
+        "schema": {}
+      },
+      "compiledCode": "59017201010029800aba2aba1aba0aab9faab9eaab9dab9a488888896600264653001300800198041804800cc0200092225980099b8748008c01cdd500144c8cc896600266e1d2000300a375400d15980098059baa006899b8948010c8cc004004c8cc0040052f5c211e581cf06e37f07bdd03ee357d66a4431ab5a36138013094d4c336a51e5eeb00811e581c29f661e46b0f0b708d2509319997a848ac083bff56a0cb0f39c94e5c00811e581c3aa33a370ea3f66fbf1375d40e3f62e9e6ee06077abc83e360deb2e000112cc004006297ae0899912cc004c8cc004004dd6180a180a980a980a980a980a980a980a980a98089baa00a2259800800c528456600266e3cdd7180a8008024528c4cc008008c05800501020268998091ba900233004004001899802002000a01c375c6022002602400280788966002003148002266e012002330020023011001403916403116402460180026018601a00260106ea800a2c8030601000260066ea802229344d9590011",
+      "hash": "caf274c0add6476526990a2417f4422aeef99ff1f04adc3a5fae62eb"
+    },
+    {
+      "title": "multi_sig_wallet.multisig.spend",
+      "datum": {
+        "title": "datum",
+        "schema": {
+          "$ref": "#/definitions/multi_sig_wallet~1Datum"
+        }
+      },
+      "redeemer": {
+        "title": "_redeemer",
+        "schema": {
+          "$ref": "#/definitions/multi_sig_wallet~1Redeemer"
+        }
+      },
+      "compiledCode": "59013c01010029800aba2aba1aba0aab9faab9eaab9dab9a488888896600264653001300800198041804800cc0200092225980099b8748008c01cdd500144c8cc896600266e1d2000300a375400d15980098059baa0068acc00528c56600266e1d2000300a3754003132337126eb4c03cc040004c8cc004004c8cc004004dd61808801912cc004006297ae0899912cc004c8cc004004dd6180a980b180b180b180b180b180b180b180b18091baa00b2259800800c528456600266e3cdd7180b0008024528c4cc008008c05c00501120288998099ba900233004004001899802002000a01e375c6024002602600280808966002003148002266e012002330020023012001403c60166ea8c038c02cdd5000c5900945900945900c45900918060009806180680098041baa0028b200c180400098019baa0088a4d13656400401",
+      "hash": "b3378345e8f3f03d3edcec0646147756c9e19f66b8b18d405f3c7f4d"
+    },
+    {
+      "title": "multi_sig_wallet.multisig.else",
+      "redeemer": {
+        "schema": {}
+      },
+      "compiledCode": "59013c01010029800aba2aba1aba0aab9faab9eaab9dab9a488888896600264653001300800198041804800cc0200092225980099b8748008c01cdd500144c8cc896600266e1d2000300a375400d15980098059baa0068acc00528c56600266e1d2000300a3754003132337126eb4c03cc040004c8cc004004c8cc004004dd61808801912cc004006297ae0899912cc004c8cc004004dd6180a980b180b180b180b180b180b180b180b18091baa00b2259800800c528456600266e3cdd7180b0008024528c4cc008008c05c00501120288998099ba900233004004001899802002000a01e375c6024002602600280808966002003148002266e012002330020023012001403c60166ea8c038c02cdd5000c5900945900945900c45900918060009806180680098041baa0028b200c180400098019baa0088a4d13656400401",
+      "hash": "b3378345e8f3f03d3edcec0646147756c9e19f66b8b18d405f3c7f4d"
+    }
+  ],
+  "definitions": {
+    "ByteArray": {
+      "dataType": "bytes"
+    },
+    "Data": {
+      "title": "Data",
+      "description": "Any Plutus data."
+    },
+    "Int": {
+      "dataType": "integer"
+    },
+    "List<aiken/crypto/VerificationKeyHash>": {
+      "dataType": "list",
+      "items": {
+        "$ref": "#/definitions/aiken~1crypto~1VerificationKeyHash"
+      }
+    },
+    "aiken/crypto/VerificationKeyHash": {
+      "title": "VerificationKeyHash",
+      "dataType": "bytes"
+    },
+    "hello_world/Datum": {
+      "title": "Datum",
+      "anyOf": [
+        {
+          "title": "Datum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "owner",
+              "$ref": "#/definitions/aiken~1crypto~1VerificationKeyHash"
+            }
+          ]
+        }
+      ]
+    },
+    "hello_world/Redeemer": {
+      "title": "Redeemer",
+      "anyOf": [
+        {
+          "title": "Redeemer",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "msg",
+              "$ref": "#/definitions/ByteArray"
+            }
+          ]
+        }
+      ]
+    },
+    "multi_sig_fixed/Redeemer": {
+      "title": "Redeemer",
+      "anyOf": [
+        {
+          "title": "Spend",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": []
+        }
+      ]
+    },
+    "multi_sig_wallet/Datum": {
+      "title": "Datum",
+      "anyOf": [
+        {
+          "title": "Datum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "owners",
+              "$ref": "#/definitions/List<aiken~1crypto~1VerificationKeyHash>"
+            },
+            {
+              "title": "threshold",
+              "$ref": "#/definitions/Int"
+            }
+          ]
+        }
+      ]
+    },
+    "multi_sig_wallet/Redeemer": {
+      "title": "Redeemer",
+      "anyOf": [
+        {
+          "title": "Spend",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": []
+        }
+      ]
+    }
+  }
+}
