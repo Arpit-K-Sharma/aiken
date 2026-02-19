@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Multi-Sig Wallet | Aiken",
-  description: "Multi-signature wallet powered by Aiken smart contracts on Cardano",
+  description: "Multi-signature wallet system powered by Aiken smart contracts on Cardano",
 };
 
 export default function RootLayout({
