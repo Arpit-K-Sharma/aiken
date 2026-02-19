@@ -63,3 +63,41 @@ export async function addressToKeyHashAsync(bech32Address: string): Promise<stri
 
     return keyHash.to_hex();
 }
+
+/**
+ * Convert a payment key hash to a Cardano enterprise address (bech32)
+ * Enterprise address = payment credential only, no staking credential
+ * @param keyHashHex - Payment key hash as hex string
+ * @param networkId - 0 for testnet, 1 for mainnet
+ * @returns Bech32 encoded address
+ */
+export async function keyHashToAddressAsync(keyHashHex: string, networkId: number): Promise<string> {
+    const csl = await getCSL();
+
+    // Create Ed25519KeyHash from hex
+    const keyHash = csl.Ed25519KeyHash.from_hex(keyHashHex);
+
+    // Create payment credential from key hash
+    const paymentCred = csl.Credential.from_keyhash(keyHash);
+
+    // Create enterprise address (no staking credential)
+    const enterpriseAddr = csl.EnterpriseAddress.new(networkId, paymentCred);
+
+    // Convert to bech32
+    return enterpriseAddr.to_address().to_bech32();
+}
+
+/**
+ * Synchronous version - only use after CSL is loaded
+ */
+export function keyHashToAddress(keyHashHex: string, networkId: number): string {
+    if (!CSL) {
+        throw new Error("CSL not loaded. Call getCSL() first or use keyHashToAddressAsync().");
+    }
+
+    const keyHash = CSL.Ed25519KeyHash.from_hex(keyHashHex);
+    const paymentCred = CSL.Credential.from_keyhash(keyHash);
+    const enterpriseAddr = CSL.EnterpriseAddress.new(networkId, paymentCred);
+
+    return enterpriseAddr.to_address().to_bech32();
+}

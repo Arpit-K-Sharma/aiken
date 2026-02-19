@@ -2,26 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import { BrowserWallet, UTxO } from '@meshsdk/core'
-import { bech32 } from 'bech32'
 import { Button } from '@/components/ui/button'
 import { parseDatum } from '@/lib/server/validators/multi_sig_wallet/multi-sig-unlock'
 import { addressToKeyHashAsync } from '@/lib/addressToKeyHash'
 import { useMultiSig, formatCountdown } from '@/components/validators/multi-sig-wallet/hooks/useMultisig'
-import { CARDANO_NETWORK } from '@/lib/config'
-
-// Convert a payment key hash (hex) to a Cardano enterprise address (bech32)
-function pkhToAddress(pkh: string): string {
-    try {
-        const isMainnet = CARDANO_NETWORK === 1
-        const headerByte = isMainnet ? 0x61 : 0x60
-        const pkhBytes = Buffer.from(pkh, 'hex')
-        const payload = Buffer.concat([Buffer.from([headerByte]), pkhBytes])
-        const words = bech32.toWords(payload)
-        return bech32.encode(isMainnet ? 'addr' : 'addr_test', words, 1000)
-    } catch {
-        return pkh
-    }
-}
 
 interface UnlockMultiSigProps {
     wallet: BrowserWallet | null
@@ -85,9 +69,14 @@ export function UnlockMultiSig({ wallet, scriptAddr, scriptCbor, onUtxosRefresh 
                 const uniqueOwners = [...new Set(owners)]
                 setDatumOwners(uniqueOwners)
                 setDatumThreshold(threshold)
-                // Build pkh → address map for display
+                // Build pkh → display map - show shortened key hash for identification
+                // Note: We can't reconstruct full wallet addresses (with staking credentials) from just payment key hashes
                 const addrMap: Record<string, string> = {}
-                for (const pkh of uniqueOwners) addrMap[pkh] = pkhToAddress(pkh)
+                for (const pkh of uniqueOwners) {
+                    // Show shortened key hash: first 8 + last 8 characters
+                    const shortened = pkh.length > 20 ? `${pkh.slice(0, 8)}...${pkh.slice(-8)}` : pkh
+                    addrMap[pkh] = `Key: ${shortened}`
+                }
                 setOwnerAddresses(addrMap)
                 // Auto-select current wallet + first (threshold-1) other owners
                 const autoSelected = new Set<string>()
