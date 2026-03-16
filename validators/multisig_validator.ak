@@ -38,6 +38,8 @@ pub type MultisigDatum {
   // The NFT policy id that was minted for this specific UTXO
   // Used to identify WHICH NFT belongs to this deposit
   nft_policy: PolicyId,
+  // Token name of the receipt NFT (user-defined)
+  nft_token_name: ByteArray,
 }
 
 // ─────────────────────────────────────────────
@@ -99,9 +101,11 @@ fn find_script_output(
 // HELPER: Check that the NFT is being BURNED in this transaction
 // burn = minting a quantity of -1 for that policy
 // ─────────────────────────────────────────────
-fn nft_is_burned(mint: assets.Value, nft_policy: PolicyId) -> Bool {
-  // The NFT token name is "" (empty) — one NFT per deposit
-  let nft_token_name = ""
+fn nft_is_burned_with_name(
+  mint: assets.Value,
+  nft_policy: PolicyId,
+  nft_token_name: ByteArray,
+) -> Bool {
   quantity_of(mint, nft_policy, nft_token_name) == -1
 }
 
@@ -166,7 +170,11 @@ validator multisig_validator {
       Spend ->
         // Check 1: Enough signatures
         // Check 2: NFT is being burned (quantity = -1)
-        sigs_ok && nft_is_burned(mint, datum.nft_policy)
+        sigs_ok && nft_is_burned_with_name(
+          mint,
+          datum.nft_policy,
+          datum.nft_token_name,
+        )
 
       // ══ ACTION: UPDATE (change signers/threshold) ══
       // User wants to update who can sign or how many needed
@@ -185,7 +193,11 @@ validator multisig_validator {
               new_threshold >= 1 && new_threshold <= list.length(new_signers)
             let datum_ok = valid_datum_returned(script_output)
             let nft_still_present =
-              quantity_of(script_output.value, datum.nft_policy, "") == 1
+              quantity_of(
+                script_output.value,
+                datum.nft_policy,
+                datum.nft_token_name,
+              ) == 1
 
             sigs_ok && new_threshold_valid && datum_ok && nft_still_present
           }

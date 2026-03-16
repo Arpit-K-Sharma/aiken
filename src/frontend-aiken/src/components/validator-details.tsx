@@ -6,6 +6,8 @@ import type { ValidatorScript } from './validator-selector'
 import { LockMultiSig } from './validators/multi-sig-wallet/LockMultiSig'
 import { UnlockMultiSig } from './validators/multi-sig-wallet/UnlockMultiSig'
 import { LockMultiSigFixed } from './validators/multi-sig-fixed/LockMultiSigFixed'
+import { LockMultisigNft } from './validators/multisig_nft_validator/LockMultisigNft'
+import { UnlockMultisigNft } from './validators/multisig_nft_validator/UnlockMultisigNft'
 
 interface ValidatorDetailsProps {
     validator: ValidatorScript
@@ -47,6 +49,9 @@ export function ValidatorDetails({ validator }: ValidatorDetailsProps) {
 
             case 'multi_sig_fixed':
                 return <LockMultiSigFixed wallet={wallet} scriptAddr={validator.scriptAddr} />
+
+            case 'multisig_validator':
+                return <LockMultisigNft wallet={wallet} scriptAddr={validator.scriptAddr} />
             default:
                 return (
                     <div className="text-center text-gray-400 p-4">
@@ -65,6 +70,15 @@ export function ValidatorDetails({ validator }: ValidatorDetailsProps) {
             case 'multi_sig_wallet':
                 return (
                     <UnlockMultiSig
+                        wallet={wallet}
+                        scriptAddr={validator.scriptAddr}
+                        scriptCbor={validator.scriptCbor}
+                    />
+                )
+            case 'multisig_nft_validator':
+            case 'multisig_validator':
+                return (
+                    <UnlockMultisigNft
                         wallet={wallet}
                         scriptAddr={validator.scriptAddr}
                         scriptCbor={validator.scriptCbor}

@@ -4,7 +4,9 @@
 // Session auto-expires after SESSION_TTL_MS (default 10 minutes)
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const SESSION_KEY = "multisig_session";
+// Versioned key to invalidate stale sessions when tx-building semantics change
+// (e.g. ExUnits/redeemer budgets), preventing resubmission of outdated partial txs.
+export const SESSION_KEY = "multisig_session_v2";
 export const SESSION_TTL_MS = 10 * 60 * 1000; // 10 minutes
 
 export interface MultiSigSession {

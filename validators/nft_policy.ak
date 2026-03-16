@@ -57,10 +57,9 @@ fn exactly_one_minted(mint: assets.Value, policy_id: PolicyId) -> Bool {
   let minted_tokens = tokens(mint, policy_id) |> dict.to_pairs()
   when minted_tokens is {
     // There must be exactly ONE token name entry
-    [Pair(token_name, quantity)] ->
-      // Token name must be "" (empty — we use empty name for simplicity)
+    [Pair(_, quantity)] ->
       // Quantity must be exactly 1
-      token_name == "" && quantity == 1
+      quantity == 1
     // Zero tokens or multiple token names = rejected
     _ -> False
   }
@@ -73,9 +72,9 @@ fn exactly_one_minted(mint: assets.Value, policy_id: PolicyId) -> Bool {
 fn exactly_one_burned(mint: assets.Value, policy_id: PolicyId) -> Bool {
   let minted_tokens = tokens(mint, policy_id) |> dict.to_pairs()
   when minted_tokens is {
-    [Pair(token_name, quantity)] ->
-      // Token name "" and quantity -1 = burning exactly one NFT
-      token_name == "" && quantity == -1
+    [Pair(_, quantity)] ->
+      // Quantity -1 = burning exactly one NFT
+      quantity == -1
     _ -> False
   }
 }

@@ -37,31 +37,6 @@
       "hash": "d36d6f01490e361d6944b224feecd3875751a05eebae444a30d4125c"
     },
     {
-      "title": "multi_sig_fixed.multisig_fixed.spend",
-      "datum": {
-        "title": "_datum",
-        "schema": {
-          "$ref": "#/definitions/Data"
-        }
-      },
-      "redeemer": {
-        "title": "_redeemer",
-        "schema": {
-          "$ref": "#/definitions/multi_sig_fixed~1Redeemer"
-        }
-      },
-      "compiledCode": "59017201010029800aba2aba1aba0aab9faab9eaab9dab9a488888896600264653001300800198041804800cc0200092225980099b8748008c01cdd500144c8cc896600266e1d2000300a375400d15980098059baa006899b8948010c8cc004004c8cc0040052f5c211e581cf06e37f07bdd03ee357d66a4431ab5a36138013094d4c336a51e5eeb00811e581c29f661e46b0f0b708d2509319997a848ac083bff56a0cb0f39c94e5c00811e581c3aa33a370ea3f66fbf1375d40e3f62e9e6ee06077abc83e360deb2e000112cc004006297ae0899912cc004c8cc004004dd6180a180a980a980a980a980a980a980a980a98089baa00a2259800800c528456600266e3cdd7180a8008024528c4cc008008c05800501020268998091ba900233004004001899802002000a01c375c6022002602400280788966002003148002266e012002330020023011001403916403116402460180026018601a00260106ea800a2c8030601000260066ea802229344d9590011",
-      "hash": "caf274c0add6476526990a2417f4422aeef99ff1f04adc3a5fae62eb"
-    },
-    {
-      "title": "multi_sig_fixed.multisig_fixed.else",
-      "redeemer": {
-        "schema": {}
-      },
-      "compiledCode": "59017201010029800aba2aba1aba0aab9faab9eaab9dab9a488888896600264653001300800198041804800cc0200092225980099b8748008c01cdd500144c8cc896600266e1d2000300a375400d15980098059baa006899b8948010c8cc004004c8cc0040052f5c211e581cf06e37f07bdd03ee357d66a4431ab5a36138013094d4c336a51e5eeb00811e581c29f661e46b0f0b708d2509319997a848ac083bff56a0cb0f39c94e5c00811e581c3aa33a370ea3f66fbf1375d40e3f62e9e6ee06077abc83e360deb2e000112cc004006297ae0899912cc004c8cc004004dd6180a180a980a980a980a980a980a980a980a98089baa00a2259800800c528456600266e3cdd7180a8008024528c4cc008008c05800501020268998091ba900233004004001899802002000a01c375c6022002602400280788966002003148002266e012002330020023011001403916403116402460180026018601a00260106ea800a2c8030601000260066ea802229344d9590011",
-      "hash": "caf274c0add6476526990a2417f4422aeef99ff1f04adc3a5fae62eb"
-    },
-    {
       "title": "multi_sig_wallet.multisig.spend",
       "datum": {
         "title": "datum",
@@ -85,15 +60,149 @@
       },
       "compiledCode": "59013c01010029800aba2aba1aba0aab9faab9eaab9dab9a488888896600264653001300800198041804800cc0200092225980099b8748008c01cdd500144c8cc896600266e1d2000300a375400d15980098059baa0068acc00528c56600266e1d2000300a3754003132337126eb4c03cc040004c8cc004004c8cc004004dd61808801912cc004006297ae0899912cc004c8cc004004dd6180a980b180b180b180b180b180b180b180b18091baa00b2259800800c528456600266e3cdd7180b0008024528c4cc008008c05c00501120288998099ba900233004004001899802002000a01e375c6024002602600280808966002003148002266e012002330020023012001403c60166ea8c038c02cdd5000c5900945900945900c45900918060009806180680098041baa0028b200c180400098019baa0088a4d13656400401",
       "hash": "b3378345e8f3f03d3edcec0646147756c9e19f66b8b18d405f3c7f4d"
+    },
+    {
+      "title": "multisig_validator.multisig_validator.spend",
+      "datum": {
+        "title": "datum_opt",
+        "schema": {
+          "$ref": "#/definitions/multisig_validator~1MultisigDatum"
+        }
+      },
+      "redeemer": {
+        "title": "redeemer",
+        "schema": {
+          "$ref": "#/definitions/multisig_validator~1MultisigRedeemer"
+        }
+      },
+      "compiledCode": "59044501010029800aba2aba1aba0aab9faab9eaab9dab9a488888896600264653001300800198041804800cdc3a400530080024888966002600460106ea800e3300130093754007223233001001003223300300130020029b874800260106ea80112222332232598009802802456600260206ea802e003164045159800980480244c8c8c966002602e0051330093758602c00644b300100280344c8c008c06800cdd7180c001202c8b2028375a602a002602a00260206ea802e2c807100e0acc004c010c038dd5000c4cc88ca6002602c602c003301530123754009330023758602a006466ebcc058c04cdd50008032444b3001300a30143754003198009180c980d000c8c064c068c068c0680064446466446600400400244b3001001801c4c8cc896600266e4401c00a2b30013371e00e0051001803203889980280298110022038375c60360026eb4c070004c07800501c191919800800803112cc00400600713233225980099b910090028acc004cdc78048014400600c80ea26600a00a604600880e8dd7180e0009bab301d001301f0014074297adef6c601480024603260346034002911119912cc004c040c068dd500b456600200313370f30013756603c013375c600660366ea80226eb8c014c06cdd5004200848006294101944ca60026eb0c07c0066eb4c07cc080006660186eb0c07c02c8cdd79810180e9baa0010044889660026028603c6ea80062646644b30010088acc0056600266e252002005899b8900530020068a504081159800992cc004cdc3a400860446ea8006264b300130193023375400313232323298009bae302b0019bad302b0039bae302b002488966002605e0091330213758605c00e44b30010028acc0066002b300137586060605a6ea802a2946294102e528528a0568acc004cdc4a40046eb4c060c0b4dd500544cdc49bad3018302d3754014601a6eb0c0c0c0b4dd5005452820568a5040ad13230023032003375c606000481722c816060560026054002605200260486ea80062c8110c098c08cdd5000c5282042300a302237540031301b98009bab300d30223754003375c601460446ea803e6eb8c030c088dd5007a0168a50408114a0810229410201800800981198101baa0022259800800c52000899b8048008cc008008c0940050224528203a180d9baa0164064603860326ea8c010c064dd5180e180c9baa00532337126eb4c014c068dd5003994c0040066eb0c078c06cdd5004520004004444b30010028800c660020073021002992cc004c8cc004004018896600200314a115980099b8f375c604600200714a313300200230240014078810a266e00009200288012038375c6040004801901e1bac301c301d301d301d301d0074590130c054c054008c03cdd5003911919800800801912cc004006298103d87a80008992cc004c010006266e952000330160014bd7044cc00c00cc060009012180b000a0288b201a3010004301030110044590070c020004c00cdd5004452689b2b20021",
+      "hash": "58c2acd766943f4772b7358d8a8834e6a4f62632ae9ded573c81978c"
+    },
+    {
+      "title": "multisig_validator.multisig_validator.else",
+      "redeemer": {
+        "schema": {}
+      },
+      "compiledCode": "59044501010029800aba2aba1aba0aab9faab9eaab9dab9a488888896600264653001300800198041804800cdc3a400530080024888966002600460106ea800e3300130093754007223233001001003223300300130020029b874800260106ea80112222332232598009802802456600260206ea802e003164045159800980480244c8c8c966002602e0051330093758602c00644b300100280344c8c008c06800cdd7180c001202c8b2028375a602a002602a00260206ea802e2c807100e0acc004c010c038dd5000c4cc88ca6002602c602c003301530123754009330023758602a006466ebcc058c04cdd50008032444b3001300a30143754003198009180c980d000c8c064c068c068c0680064446466446600400400244b3001001801c4c8cc896600266e4401c00a2b30013371e00e0051001803203889980280298110022038375c60360026eb4c070004c07800501c191919800800803112cc00400600713233225980099b910090028acc004cdc78048014400600c80ea26600a00a604600880e8dd7180e0009bab301d001301f0014074297adef6c601480024603260346034002911119912cc004c040c068dd500b456600200313370f30013756603c013375c600660366ea80226eb8c014c06cdd5004200848006294101944ca60026eb0c07c0066eb4c07cc080006660186eb0c07c02c8cdd79810180e9baa0010044889660026028603c6ea80062646644b30010088acc0056600266e252002005899b8900530020068a504081159800992cc004cdc3a400860446ea8006264b300130193023375400313232323298009bae302b0019bad302b0039bae302b002488966002605e0091330213758605c00e44b30010028acc0066002b300137586060605a6ea802a2946294102e528528a0568acc004cdc4a40046eb4c060c0b4dd500544cdc49bad3018302d3754014601a6eb0c0c0c0b4dd5005452820568a5040ad13230023032003375c606000481722c816060560026054002605200260486ea80062c8110c098c08cdd5000c5282042300a302237540031301b98009bab300d30223754003375c601460446ea803e6eb8c030c088dd5007a0168a50408114a0810229410201800800981198101baa0022259800800c52000899b8048008cc008008c0940050224528203a180d9baa0164064603860326ea8c010c064dd5180e180c9baa00532337126eb4c014c068dd5003994c0040066eb0c078c06cdd5004520004004444b30010028800c660020073021002992cc004c8cc004004018896600200314a115980099b8f375c604600200714a313300200230240014078810a266e00009200288012038375c6040004801901e1bac301c301d301d301d301d0074590130c054c054008c03cdd5003911919800800801912cc004006298103d87a80008992cc004c010006266e952000330160014bd7044cc00c00cc060009012180b000a0288b201a3010004301030110044590070c020004c00cdd5004452689b2b20021",
+      "hash": "58c2acd766943f4772b7358d8a8834e6a4f62632ae9ded573c81978c"
+    },
+    {
+      "title": "nft_policy.nft_policy.mint",
+      "redeemer": {
+        "title": "action",
+        "schema": {
+          "$ref": "#/definitions/nft_policy~1NFTAction"
+        }
+      },
+      "parameters": [
+        {
+          "title": "utxo_ref",
+          "schema": {
+            "$ref": "#/definitions/cardano~1transaction~1OutputReference"
+          }
+        },
+        {
+          "title": "multisig_hash",
+          "schema": {
+            "$ref": "#/definitions/ByteArray"
+          }
+        }
+      ],
+      "compiledCode": "5901d10101002229800aba2aba1aab9faab9eaab9dab9a9bae002488888896600264653001300800198041804800cdc3a400130080024888966002600460126ea800e266446644b300130060018acc004c038dd5004400a2c807a2b300130030018acc004c038dd5004400a2c807a2c806100c0994c004dd61807800cdd598079808180818081808000c88c8cc00400400c896600200314a115980098019809800c528c4cc008008c05000500f202491191919800800802112cc00400600713233225980099b910070028acc004cdc78038014400600c809a26600a00a60300088098dd718090009bab30130013014001404c297adef6c604888966002601260206ea802e2b30013300200423375e602860246ea800406226644b30010018014566002602c00313008375a6026602a003002405080a052819800801803c528201e8acc004cc0080108c966002601060246ea8006266e3cdd7180a98099baa0010108a504044602860246ea8c050c048dd5180a180a98091baa001899912cc004006005159800980b000c4cdc39bad301330150014800600480a10140a50330010030078a50403c807860186ea800cc02cdd50031bae300c300a37540066e1d20028b2010180400098021baa0088a4d1365640081",
+      "hash": "4e38941629c1070fc899a80926567fb8145fb25022e2f108421601e2"
+    },
+    {
+      "title": "nft_policy.nft_policy.else",
+      "redeemer": {
+        "schema": {}
+      },
+      "parameters": [
+        {
+          "title": "utxo_ref",
+          "schema": {
+            "$ref": "#/definitions/cardano~1transaction~1OutputReference"
+          }
+        },
+        {
+          "title": "multisig_hash",
+          "schema": {
+            "$ref": "#/definitions/ByteArray"
+          }
+        }
+      ],
+      "compiledCode": "5901d10101002229800aba2aba1aab9faab9eaab9dab9a9bae002488888896600264653001300800198041804800cdc3a400130080024888966002600460126ea800e266446644b300130060018acc004c038dd5004400a2c807a2b300130030018acc004c038dd5004400a2c807a2c806100c0994c004dd61807800cdd598079808180818081808000c88c8cc00400400c896600200314a115980098019809800c528c4cc008008c05000500f202491191919800800802112cc00400600713233225980099b910070028acc004cdc78038014400600c809a26600a00a60300088098dd718090009bab30130013014001404c297adef6c604888966002601260206ea802e2b30013300200423375e602860246ea800406226644b30010018014566002602c00313008375a6026602a003002405080a052819800801803c528201e8acc004cc0080108c966002601060246ea8006266e3cdd7180a98099baa0010108a504044602860246ea8c050c048dd5180a180a98091baa001899912cc004006005159800980b000c4cdc39bad301330150014800600480a10140a50330010030078a50403c807860186ea800cc02cdd50031bae300c300a37540066e1d20028b2010180400098021baa0088a4d1365640081",
+      "hash": "4e38941629c1070fc899a80926567fb8145fb25022e2f108421601e2"
+    },
+    {
+      "title": "no_datum.nodatum.spend",
+      "datum": {
+        "title": "datum",
+        "schema": {
+          "$ref": "#/definitions/no_datum~1MultisigDatum"
+        }
+      },
+      "redeemer": {
+        "title": "_redeemer",
+        "schema": {
+          "$ref": "#/definitions/no_datum~1MultisigRedeemer"
+        }
+      },
+      "parameters": [
+        {
+          "title": "owner1",
+          "schema": {
+            "$ref": "#/definitions/aiken~1crypto~1VerificationKeyHash"
+          }
+        },
+        {
+          "title": "owner2",
+          "schema": {
+            "$ref": "#/definitions/aiken~1crypto~1VerificationKeyHash"
+          }
+        },
+        {
+          "title": "owner3",
+          "schema": {
+            "$ref": "#/definitions/aiken~1crypto~1VerificationKeyHash"
+          }
+        }
+      ],
+      "compiledCode": "59014b01010022229800aba2aba1aba0aab9faab9eaab9dab9a9bae0049bae0039bae002488888888896600264646644b30013370e900118049baa00189919912cc004cdc3a400060186ea80162b3001300d375400b15980099b8748000c030dd5000c4c8cdc49bad3011300e37546022601c6ea8008c8cc004004c8cc004004dd61809980a180a180a180a180a180a180a180a18081baa301300a2259800800c52f5c113322598009919800800803912cc00400629422b30013371e6eb8c06000401229462660040046032002809901644cc054dd480119802002000c4cc0100100050111bae30140013015001404844b30010018a4001133700900119801001180a000a0223300f37520146601e6ea4024cc03cdd480425eb822c805a2c80722c8058c038004c038c03c004c028dd5000c59008180580098059806000980580098031baa00b8a4d13656401001",
+      "hash": "ab6437bb3e56333c19ec9a17a571a5154a9c3e0e898e5f1023288d98"
+    },
+    {
+      "title": "no_datum.nodatum.else",
+      "redeemer": {
+        "schema": {}
+      },
+      "parameters": [
+        {
+          "title": "owner1",
+          "schema": {
+            "$ref": "#/definitions/aiken~1crypto~1VerificationKeyHash"
+          }
+        },
+        {
+          "title": "owner2",
+          "schema": {
+            "$ref": "#/definitions/aiken~1crypto~1VerificationKeyHash"
+          }
+        },
+        {
+          "title": "owner3",
+          "schema": {
+            "$ref": "#/definitions/aiken~1crypto~1VerificationKeyHash"
+          }
+        }
+      ],
+      "compiledCode": "59014b01010022229800aba2aba1aba0aab9faab9eaab9dab9a9bae0049bae0039bae002488888888896600264646644b30013370e900118049baa00189919912cc004cdc3a400060186ea80162b3001300d375400b15980099b8748000c030dd5000c4c8cdc49bad3011300e37546022601c6ea8008c8cc004004c8cc004004dd61809980a180a180a180a180a180a180a180a18081baa301300a2259800800c52f5c113322598009919800800803912cc00400629422b30013371e6eb8c06000401229462660040046032002809901644cc054dd480119802002000c4cc0100100050111bae30140013015001404844b30010018a4001133700900119801001180a000a0223300f37520146601e6ea4024cc03cdd480425eb822c805a2c80722c8058c038004c038c03c004c028dd5000c59008180580098059806000980580098031baa00b8a4d13656401001",
+      "hash": "ab6437bb3e56333c19ec9a17a571a5154a9c3e0e898e5f1023288d98"
     }
   ],
   "definitions": {
     "ByteArray": {
+      "title": "ByteArray",
       "dataType": "bytes"
-    },
-    "Data": {
-      "title": "Data",
-      "description": "Any Plutus data."
     },
     "Int": {
       "dataType": "integer"
@@ -107,6 +216,31 @@
     "aiken/crypto/VerificationKeyHash": {
       "title": "VerificationKeyHash",
       "dataType": "bytes"
+    },
+    "cardano/assets/PolicyId": {
+      "title": "PolicyId",
+      "dataType": "bytes"
+    },
+    "cardano/transaction/OutputReference": {
+      "title": "OutputReference",
+      "description": "An `OutputReference` is a unique reference to an output on-chain. The `output_index`\n corresponds to the position in the output list of the transaction (identified by its id)\n that produced that output",
+      "anyOf": [
+        {
+          "title": "OutputReference",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "transaction_id",
+              "$ref": "#/definitions/ByteArray"
+            },
+            {
+              "title": "output_index",
+              "$ref": "#/definitions/Int"
+            }
+          ]
+        }
+      ]
     },
     "hello_world/Datum": {
       "title": "Datum",
@@ -140,17 +274,6 @@
         }
       ]
     },
-    "multi_sig_fixed/Redeemer": {
-      "title": "Redeemer",
-      "anyOf": [
-        {
-          "title": "Spend",
-          "dataType": "constructor",
-          "index": 0,
-          "fields": []
-        }
-      ]
-    },
     "multi_sig_wallet/Datum": {
       "title": "Datum",
       "anyOf": [
@@ -173,6 +296,104 @@
     },
     "multi_sig_wallet/Redeemer": {
       "title": "Redeemer",
+      "anyOf": [
+        {
+          "title": "Spend",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": []
+        }
+      ]
+    },
+    "multisig_validator/MultisigDatum": {
+      "title": "MultisigDatum",
+      "anyOf": [
+        {
+          "title": "MultisigDatum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "signers",
+              "$ref": "#/definitions/List<aiken~1crypto~1VerificationKeyHash>"
+            },
+            {
+              "title": "threshold",
+              "$ref": "#/definitions/Int"
+            },
+            {
+              "title": "nft_policy",
+              "$ref": "#/definitions/cardano~1assets~1PolicyId"
+            },
+            {
+              "title": "nft_token_name",
+              "$ref": "#/definitions/ByteArray"
+            }
+          ]
+        }
+      ]
+    },
+    "multisig_validator/MultisigRedeemer": {
+      "title": "MultisigRedeemer",
+      "anyOf": [
+        {
+          "title": "Spend",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": []
+        },
+        {
+          "title": "Update",
+          "dataType": "constructor",
+          "index": 1,
+          "fields": [
+            {
+              "title": "new_signers",
+              "$ref": "#/definitions/List<aiken~1crypto~1VerificationKeyHash>"
+            },
+            {
+              "title": "new_threshold",
+              "$ref": "#/definitions/Int"
+            }
+          ]
+        }
+      ]
+    },
+    "nft_policy/NFTAction": {
+      "title": "NFTAction",
+      "anyOf": [
+        {
+          "title": "MintNFT",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": []
+        },
+        {
+          "title": "BurnNFT",
+          "dataType": "constructor",
+          "index": 1,
+          "fields": []
+        }
+      ]
+    },
+    "no_datum/MultisigDatum": {
+      "title": "MultisigDatum",
+      "anyOf": [
+        {
+          "title": "MultisigDatum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "threshold",
+              "$ref": "#/definitions/Int"
+            }
+          ]
+        }
+      ]
+    },
+    "no_datum/MultisigRedeemer": {
+      "title": "MultisigRedeemer",
       "anyOf": [
         {
           "title": "Spend",
